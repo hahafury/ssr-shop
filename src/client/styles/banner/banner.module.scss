@@ -1,0 +1,30 @@
+@use '../../styles/constants/colors';
+.banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+.banner__content{
+    color: white;
+    margin-top: 100px;
+
+    position: relative;
+    z-index: 2;
+}
+.banner__header{
+    font-size: 100px;
+    display: inline-block;
+    background-color: #923e0d;
+    padding: 16px;
+
+}
+.banner__text{
+    font-size: 70px;
+
+}
+.banner__action{
+
+}

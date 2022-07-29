@@ -1,0 +1,236 @@
+@use '../../constants/colors';
+
+.burger {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    right: 0;
+    transition: all 0.3s ease 0s;
+    transform: translate(+100%, 0);
+    height: 100vh;
+    width: 300px;
+    padding: 0 40px;
+    background-color: white;
+    z-index: 3
+}
+
+.burger__back {
+    width: 100%;
+    flex: 0 0 60px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.burger__backButton {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}
+
+.burger__backIcon {
+    transform: rotate(180deg);
+
+}
+
+.burger__action {
+    margin: 10px 0 40px 0;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 20px;
+
+}
+
+.burger__image {
+    object-fit: contain;
+    height: 90%;
+    width: 90%;
+}
+
+.button {
+    &:hover {
+        color: colors.$color-orange;
+    }
+
+    background-color: black;
+    border-radius: 10px;
+    width: 100px;
+    color: white;
+    height: 40px;
+    transition: all 0.3s ease 0s;
+}
+
+
+.button_outlined {
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+}
+
+.burger__list {
+    font-weight: 500;
+    text-align: start;
+    flex: 1 1 auto;
+
+}
+
+.burger__item {
+    cursor: pointer;
+    border-top: 1px solid colors.$color-grey05;
+    border-bottom: 1px solid colors.$color-grey05;
+    padding: 20px 0;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+        color: colors.$color-orange;
+    }
+
+}
+
+//--------------------------
+.getApp {
+    flex: 0 0 auto;
+    font-weight: 500;
+
+}
+
+.getApp__text {
+    margin-left: 5px;
+}
+
+.getApp__action {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 5px;
+    margin: 20px 0;
+
+
+}
+
+.getApp__button {
+    height: 30px;
+    font-size: 9px;
+
+    width: 80px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    background-color: colors.$color-grey05;
+
+}
+
+.getApp__buttonImage {
+    font-size: 20px;
+}
+
+.getApp__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 60px;
+    border-radius: 10px;
+    background-color: colors.$color-yellow;
+}
+
+.getApp__buttonText {
+
+}
+
+//@keyframes appear {
+//    from {
+//        background-color: rgba(0,0,0,0.4)
+//    }
+//
+//    to {
+//        background-color: rgba(0,0,0,0.4)
+//    }
+//}
+
+@keyframes appear {
+    0% {
+        background-color: rgba(0, 0, 0, 0.0)
+    }
+
+    25% {
+        background-color: rgba(0, 0, 0, 0.1)
+
+    }
+    50% {
+        background-color: rgba(0, 0, 0, 0.2)
+
+    }
+    75% {
+        background-color: rgba(0, 0, 0, 0.3)
+    }
+
+    100% {
+        background-color: rgba(0, 0, 0, 0.4)
+    }
+}
+
+@keyframes disappear {
+    0% {
+        background-color: rgba(0, 0, 0, 0.4);
+        display: block;
+    }
+
+    25% {
+        background-color: rgba(0, 0, 0, 0.3);
+        display: block;
+
+    }
+    50% {
+        background-color: rgba(0, 0, 0, 0.2);
+        display: block;
+
+    }
+    75% {
+        background-color: rgba(0, 0, 0, 0.1);
+        display:block;
+    }
+
+    100% {
+         display:none;
+    }
+}
+
+.modalWrapper {
+    position: fixed;
+    z-index: 2;
+    left: -100vw;
+    height: 100vw;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.4);
+    animation-duration: 0.3s;
+    animation-name: appear;
+    transition: color 1s;
+}
+
+.modalWrapperDisabled {
+    position: fixed;
+    z-index: 2;
+    display: none;
+    left: -100vw;
+    height: 100vw;
+    width: 100vw;
+    background-color: transparent;
+    animation-duration: 0.3s;
+    animation-name: disappear;
+    transition: color 1s;
+}
+
+.hide {
+    display: none;
+}

@@ -1,0 +1,70 @@
+@use '../../constants/colors';
+@use '../../constants/extension';
+
+
+.navigation {
+    font-weight: 700;
+    flex: 1 1 auto;
+    margin-left: 10px;
+}
+
+.navigation__list {
+    justify-content: end;
+    display: flex;
+    column-gap: 20px;
+    @include extension.smallTablet {
+        column-gap: 14px;
+    }
+}
+
+.navigation__item {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+        color: colors.$color-orange;
+    }
+
+    @include extension.phone {
+        display: none;
+    }
+}
+
+.button {
+    &:hover {
+        color: colors.$color-orange;
+    }
+
+    background-color: black;
+    border-radius: 10px;
+    width: 100px;
+    color: white;
+    height: 40px;
+    transition: all 0.3s ease 0s;
+    @include extension.phone {
+        display: none;
+    }
+}
+
+.burger {
+    background-color: transparent;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    transition: all 0.3s ease 0s;
+    border-radius: 50%;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}
+
+.burger__image {
+    object-fit: contain;
+    height: 90%;
+    width: 90%;
+}
